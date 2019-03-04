@@ -129,6 +129,10 @@ class FightScreen extends View {
             e.preventDefault();
             // self.startRound()
 
+            // yourHealthBar.style.width = yourHealth + "%";
+        	// compHealthBar.style.width =  compHealth + "%";
+
+
 
 
             (GAME.selectedCharacter).attack(GAME.selectedOpponent);
@@ -136,14 +140,12 @@ class FightScreen extends View {
                 (GAME.selectedOpponent).attack(GAME.selectedCharacter);
 
             }, 2000);
-            console.log("attack button clicked")
+            console.log("attack button clicked");
+            console.log(GAME.selectedOpponent.health);
+            console.log(GAME.selectedCharacter.health);
         });
 
-    //
-    //     startRound()
-    //
-    //     endRound()
-    // //
+
        }
     }
 
