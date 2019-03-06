@@ -7,14 +7,14 @@ class View{
         //template_id is actually set in the child classes, the different screens
         var source = document.getElementById(this.template_id).innerHTML;
 
-
         //COMPILE IT TO A TEMPLATE
         var template = Handlebars.compile(source);
 
         //calls the context data of the child class , will look in welcome screen etc to see if there is a
         // get context data
         var ctx = this.getContextData();
-        var html =template(this.ctx);
+
+        var html=template(ctx);
 
          // INJECT THE HANDLEBARS CONTENTS INTO THIS DIV TAG, use an object in ther template()
         // example template(selectedVillan)
@@ -112,14 +112,17 @@ class FightScreen extends View {
         super();
 
         //REPLACE IN VAR SOURCE WHAT THIS.TEMPLATE_ID IS
-        this.template_id = "battle-mode-screen"
+        this.template_id = "battle-mode-screen";
     }
 
     getContextData() {
+        console.log(GAME.selectedOpponent)
+
         return {
             hero: GAME.selectedCharacter,
             villan: GAME.selectedOpponent,
-        }
+        };
+
     }
 
     registerEvents() {

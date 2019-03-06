@@ -56,7 +56,7 @@ var compHealthBar = document.getElementById('compHealthBar');
 
             $(document).on('view:characterSelect', function(){
                 var view= new CharacterSelectScreen();
-               view.render();
+                view.render();
 
             });
 

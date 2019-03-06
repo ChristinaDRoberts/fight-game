@@ -35,7 +35,7 @@
                   <span class="word">Tacos</span>
                 </h2>
                 <section class="container">
-                    <div class="canvas">
+                    <div class="canvas" id="canvas">
                       <div class="taco">
                         <div class="shadow"></div>
                         <div class="back"></div>
@@ -159,36 +159,35 @@
 {#*************************************** BATTLE SCREEN ***************************************************************#}
 
 <script id="battle-mode-screen" type="text/x-handlebars-template">
-<section class="battleDiv">
-    <div class="container battleContainer">
-        <h1>Let The Battle Begin</h1>
+    <section class="battleDiv">
+        <div class="container battleContainer">
+            <h1>Let The Battle Begin</h1>
 
+                <div class="fighting" id="fightingChiahuahua" style="width: 200px; height: 200px; display:inline-block">
+                    <img class="fightingPic" src="./../../static/images/{% templatetag openvariable %} hero.imgFile {% templatetag closevariable %}" alt="chiahuahua hero ">
+                </div>
 
-            <div class="fighting" id="fightingChiahuahua" style="width: 200px; height: 200px; display:inline-block">
-                <img class= fightingPic" src ="images/{{ selectedChiahuahua.imgFile }}" alt="...">
-            </div>
+                <div class="fighting" id="fightingOpponent" style="width: 200px; height: 200px; display:inline-block">
+                    <img class="fightingPic" src="./../../static/images/{% templatetag openvariable %} villan.imgFile {% templatetag closevariable %}" alt="villan ">
 
-            <div class="fighting" id="fightingOpponent" style="width: 200px; height: 200px; display:inline-block">
-                <img class= "fightingPic" src ="images/{{ this.selectedOpponent.imgFile }}" alt="..">
+                </div>
+                    <footer class="game">
+                        <button id="attack" >Attack</button>
 
-            </div>
-                <footer class="game">
-                    <button id="attack" >Attack</button>
-{#
-		            <div id="yourHealth"><div id="yourHealthBar"></div></div>
-		            <div id="compHealth"><div id="compHealthBar"></div></div>
+                        <div id="yourHealth"><div id="yourHealthBar"></div></div>
+                        <div id="compHealth"><div id="compHealthBar"></div></div>
 
-                </footer>
+                    </footer>
 
-    </div>
-    </div>
-</section>
+        </div>
+        </div>
+    </section>
 </script>
 
 
 <script src="{% static "js/models.js" %}"></script>
 <script src="{% static "js/views.js" %}"></script>
-<script src="{% static "js/backgroundEffects.js" %}"></script>
+{#<script src="{% static "js/backgroundEffects.js" %}"></script>#}
 <script src="{% static "js/NOTES.js" %}"></script>
 
 </body>
