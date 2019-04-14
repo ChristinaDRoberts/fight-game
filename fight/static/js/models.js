@@ -138,7 +138,7 @@ class Opponent extends Character{
             )
         }
 
-        attack()
+        attack();
         {
             (this.selectedCharacter).takeDamage(this.strength);
 
