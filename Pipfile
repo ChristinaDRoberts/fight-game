@@ -8,8 +8,10 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-psycopg2 = "*"
 uwsgi = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
