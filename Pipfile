@@ -12,6 +12,7 @@ uwsgi = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"

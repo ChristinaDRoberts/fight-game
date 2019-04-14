@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -19,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+STATIC_URL = './static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -93,17 +94,23 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-
+if os.environ.get('DATABASE_URL'):
+   DATABASES = {
+       'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
+   }
+else:
+    DATABASES = {
     'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'fight',
-           'USER': 'fight',
-           'PASSWORD': '',
-           'HOST': '127.0.0.1',
-           'PORT': '5432',
+
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fight',
+        'USER': 'fight',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
-}
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
