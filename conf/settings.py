@@ -42,7 +42,7 @@ SECRET_KEY = 'k-+#u0nt2=_$5e5y!51!d)eicn!#eg5d6(dlan8m6p#*3)x)td'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['christina.turnbasedgame.com', 'localhost']
+ALLOWED_HOSTS = ['fight-game27.herokuapp.com', 'christina.turnbasedgame.com', 'localhost']
 
 
 # Application definition
